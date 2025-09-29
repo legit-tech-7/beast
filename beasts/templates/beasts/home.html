@@ -117,11 +117,28 @@
       color: #0b6ef6;
       text-decoration: none;
     }
+
+    .logo-img {
+  display: block;
+  margin: 0 auto;        /* center by default */
+  max-width: 100%;       /* don’t overflow mobile screens */
+  height: auto;          /* adjust height on small screens */
+}
+
+/* Force fixed height only on desktop */
+@media (min-width: 768px) {
+  .logo-img {
+    height: 210px;       /* same height you want for PC */
+    margin-right: 580px; /* keep your desktop spacing */
+    width: auto;         /* keep aspect ratio */
+  }
+}
+
   </style>
 </head>
 <body>
   
-<img src="{%static 'image/soft.png'%}" alt="" style="margin-right: 580px; height: 210px; ">
+<img src="{% static 'image/soft.png' %}" alt="Soft Logo" class="logo-img">
  <div class="content">
   <div style="margin: 60px; margin-top: 10px;">
     <h1 style="font-size: 47.75px; font-weight: 900; line-height: 43.4px; text-wrap-mode: wrap;text-wrap-style: balance; font-family: Inter, sans-serif; ">We’re Back!</h1>

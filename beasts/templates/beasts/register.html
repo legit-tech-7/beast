@@ -54,10 +54,26 @@ button:hover {
     background-color: #0056b3;
 }
 
+    .logo-img {
+  display: block;
+  margin: 0 auto;        /* center by default */
+  max-width: 100%;       /* don’t overflow mobile screens */
+  height: auto;          /* adjust height on small screens */
+}
+
+/* Force fixed height only on desktop */
+@media (min-width: 768px) {
+  .logo-img {
+    height: 210px;       /* same height you want for PC */
+    margin-right: 580px; /* keep your desktop spacing */
+    width: auto;         /* keep aspect ratio */
+  }
+}
+
     </style>
 </head>
 <body>
-    <img src="{%static 'image/soft.png'%}" alt="" style="margin-right: 580px; height: 190px; ">
+<img src="{% static 'image/soft1.png' %}" alt="Soft1 Logo" class="logo-img">
 
     <h1>PART V: CONTESTANT INFORMATION</h1>
 <form method="post" action="{% url 'register' %}" enctype="multipart/form-data">
